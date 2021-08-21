@@ -9,6 +9,8 @@ First, create a Client in Keycloak Realm and configure in the follow way:
 * In Service Accounts tab, go to Client Roles and choose realm-management and add realm-admin role (I will test with less permissions)
 * Get the Client ID from Settings tab and Secret ID from Credentials tab
 
+** For a while the program only adds users to a group, check TODO to see the roadmap **
+
 ```
 $ git clone https://github.com/dcna-dev/keycloak-bulk-users && cd keycloak-bulk-users
 $ python3 -m venv .venv
@@ -20,3 +22,9 @@ $ export KEYCLOAK_BASE_URL=https://keycloak.local/login
 $ export KEYCLOAK_REALM=MyRealm
 $ ./bulk-users.py -g group-name -f file-with-usernames-one-per-line.txt
 ```
+
+## TODO
+
+* Create users
+* Put users in multiple groups
+* Manipulate users and group map in a single file
