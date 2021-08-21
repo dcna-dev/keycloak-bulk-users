@@ -27,4 +27,4 @@ $ ./bulk-users.py -g group-name -f file-with-usernames-one-per-line.txt
 
 * Create users
 * Put users in multiple groups
-* Manipulate users and group map in a single file
+* Use a file with a mapping of groups and users
