@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 import logging
 import os
@@ -73,13 +75,14 @@ def init_argparse():
   return parser
 
 if __name__ == "__main__":
+
+  parser = init_argparse()
+  args = parser.parse_args()
+
   actual_date = date.today()
   logging.basicConfig(handlers=[logging.FileHandler(f"bulk-users-{actual_date.strftime('%d-%m-%Y')}.log"),
                       logging.StreamHandler()], level=logging.INFO,
                       format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %H:%M:%S')
-
-  parser = init_argparse()
-  args = parser.parse_args()
 
   client_id = os.environ['KEYCLOAK_CLIENT_ID']
   client_secret = os.environ['KEYCLOAK_CLIENT_SECRET']
