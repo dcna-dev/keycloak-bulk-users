@@ -14,7 +14,7 @@ First, create a Client in Keycloak Realm and configure in the follow way:
 ```
 $ git clone https://github.com/dcna-dev/keycloak-bulk-users && cd keycloak-bulk-users
 $ python3 -m venv .venv
-$ . .venv/bin/activat
+$ . .venv/bin/activate
 $ pip install -r requirements.txt
 $ export KEYCLOAK_CLIENT_ID=xxxxxxxx
 $ export KEYCLOAK_CLIENT_SECRET=xxxxxxxx
