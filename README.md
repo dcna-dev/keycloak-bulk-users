@@ -12,15 +12,16 @@ First, create a Client in Keycloak Realm and configure in the follow way:
 ** For a while the program only adds users to a group, check TODO to see the roadmap **
 
 ```
-$ git clone https://github.com/dcna-dev/keycloak-bulk-users && cd keycloak-bulk-users
-$ python3 -m venv .venv
-$ . .venv/bin/activate
-$ pip install -r requirements.txt
-$ export KEYCLOAK_CLIENT_ID=xxxxxxxx
-$ export KEYCLOAK_CLIENT_SECRET=xxxxxxxx
-$ export KEYCLOAK_BASE_URL=https://keycloak.local/login
-$ export KEYCLOAK_REALM=MyRealm
-$ ./bulk-users.py -g group-name -f file-with-usernames-one-per-line.txt
+git clone https://github.com/dcna-dev/keycloak-bulk-users && cd keycloak-bulk-users
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+export KEYCLOAK_CLIENT_ID=xxxxxxxx
+export KEYCLOAK_CLIENT_SECRET=xxxxxxxx
+export KEYCLOAK_BASE_URL=https://keycloak.local/login
+export KEYCLOAK_REALM=MyRealm
+./bulk-users.py -g group-name -f file-with-usernames-one-per-line.txt
+./get-group-members.py -g keycloak-group
 ```
 
 ## TODO
@@ -28,3 +29,4 @@ $ ./bulk-users.py -g group-name -f file-with-usernames-one-per-line.txt
 * Create users
 * Put users in multiple groups
 * Use a file with a mapping of groups and users
+* Pass user fields to get in get-group-members.py
